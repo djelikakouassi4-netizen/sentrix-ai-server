@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SentriX IA</title>
+</head>
+<body>
+  <h1>Chat IA SentriX</h1>
+  <input id="message" placeholder="Pose ta question">
+  <button onclick="sendMessage()">Envoyer</button>
+  <p id="response"></p>
+
+  <script>
+    async function sendMessage() {
+      const message = document.getElementById("message").value;
+      const res = await fetch("/.netlify/functions/chat", {
+        method: "POST",
+        body: JSON.stringify({ message }),
+      });
+      const data = await res.json();
+      document.getElementById("response").innerText = data.reply;
+    }
+  </script>
+</body>
+  </html>
