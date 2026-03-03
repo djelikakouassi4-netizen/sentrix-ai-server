@@ -9,7 +9,7 @@ exports.handler = async (event) => {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        model: "gpt-3.5-turbo",   // ou le modèle qu'ils fournissent
+        model: "gpt-4o-mini",   // ou le modèle qu'ils fournissent
         messages: [
           { role: "system", content: "Tu es l'IA du robot SentriX, intelligente et précise, capable de tout faire et apprendre." },
           { role: "user", content: message }
